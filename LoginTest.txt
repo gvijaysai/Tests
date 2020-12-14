@@ -1,0 +1,30 @@
+package testCases;
+import org.fb.selenium.WebDriver;
+import org.fb.selenium.chrome.ChromeDriver;
+import pages.HomePage;
+import pages.LoginPage;
+
+public class LoginTest { 
+
+@Test
+
+public void clickLogin(){
+		
+                System.setProperty("webdriver.gecko.driver", "E:\\geckodriver.exe");
+
+		WebDriver driver = new FirefoxDriver();
+
+		driver.get("https://www.facebook.com");
+		
+		HomePage home = new HomePage(driver);
+		LoginPage login = new LoginPage(driver);
+	
+		home.clickLogin();
+		
+		//Enter username & password
+		login.enterUsername("gvs.vijaysai@gmail.com");
+		login.enterPassword("XXXXXXXXX");
+               driver.quit();
+	}
+
+}
